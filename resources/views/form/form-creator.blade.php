@@ -17,8 +17,6 @@
 
         <div id="build-wrap"></div>
 
-
-        <button onclick="getData()">Save</button>
     </section>
 
 
@@ -37,7 +35,13 @@
         let form;
 
         $(document).ready(function(){
-             form = $('#build-wrap').formBuilder();
+             form = $('#build-wrap').formBuilder({
+                 disabledActionButtons: ['data'],
+                 onSave: function(evt,formData){
+                     console.log(formData)
+                     //form data
+                 }
+             });
         });
 
         function getData(){

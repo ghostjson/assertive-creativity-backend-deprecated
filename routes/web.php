@@ -39,4 +39,9 @@ Route::get('/form/form-creator', function(){
     return view('form.form-creator');
 });
 
+Route::get('/form/form-view', function(){
+    return view('form.form-view');
+});
+
+
 
