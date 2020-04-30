@@ -23,8 +23,6 @@
             <input class="form-control" type="text" placeholder="Enter Slug" id="slug">
         </div>
 
-
-
         <div id="build-wrap"></div>
 
     </section>
@@ -48,15 +46,18 @@
              form = $('#build-wrap').formBuilder({
                  disabledActionButtons: ['data'],
                  onSave: function(evt,formData){
-                     console.log(formData)
-                     //form data
+
+                     const data = {
+                         name : $('#name').val(),
+                         slug : $('#slug').val(),
+                         formData: formData
+                     }
+
+                     console.log(data)
                  }
              });
         });
 
-        function getData(){
-            console.log(form.actions.getData('json'));
-        }
     </script>
 
 @endsection
