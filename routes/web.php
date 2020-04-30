@@ -44,4 +44,8 @@ Route::get('/form/form-view', function(){
 });
 
 
+//api section NON PROPER WAY
+Route::post('/api/form/save', 'FormController@save');
+
+
 

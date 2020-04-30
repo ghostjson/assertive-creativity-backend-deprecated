@@ -53,7 +53,19 @@
                          formData: formData
                      }
 
-                     console.log(data)
+                     $.ajax({
+                         type: 'POST',
+                         url: '/api/form/save',
+                         data: data,
+                         headers: {
+                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                         },
+                         success: function (data) {
+                            if(data == 'success'){
+                                location.href = '/form/forms'
+                            }
+                         }
+                     })
                  }
              });
         });
