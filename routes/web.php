@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
+//Pages section
+
 Route::get('/pages/home', function () {
     return view('pages.home');
 });
@@ -24,4 +26,17 @@ Route::get('/pages/home', function () {
 Route::get('/pages/about', function () {
     return view('pages.about');
 });
+
+
+// Forms Section
+
+Route::get('/form/forms', function(){
+    return view('form.forms');
+});
+
+
+Route::get('/form/form-creator', function(){
+    return view('form.form-creator');
+});
+
 
