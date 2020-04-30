@@ -8,6 +8,9 @@
 
     <title>Assertive Creativity</title>
 
+    <!--Data tables-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/ju/dt-1.10.20/r-2.2.3/datatables.min.css"/
+
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/7d40304bdb.js" crossorigin="anonymous"></script>
     <!-- overlayScrollbars -->
@@ -219,6 +222,8 @@
     <script src="{{ asset('js/jquery.overlayScrollbars.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('js/adminlte.min.js') }} "></script>
+    <!-- Data Tables -->
+    <script type="text/javascript" src="https://cdn.datatables.net/v/ju/dt-1.10.20/r-2.2.3/datatables.min.js"></script>
 
     <script
         src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"

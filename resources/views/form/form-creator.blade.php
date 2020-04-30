@@ -14,6 +14,16 @@
     </style>
 
     <section class="form-creator">
+        <div class="form-group">
+            <label for="name">Form Name</label>
+            <input class="form-control input-lg" type="text" placeholder="Enter Name" id="name">
+        </div>
+        <div class="form-group">
+            <label for="slug">Form Slug</label>
+            <input class="form-control" type="text" placeholder="Enter Slug" id="slug">
+        </div>
+
+
 
         <div id="build-wrap"></div>
 
