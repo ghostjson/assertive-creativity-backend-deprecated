@@ -14,7 +14,19 @@
             <th>Edit/Remove</th>
         </tr>
         </thead>
-        <tbody></tbody>
+        <tbody>
+            <?php $id=1; ?>
+            @foreach($forms as $form)
+                <tr>
+                    <td>{{$id}}</td>
+                    <td>{{$form->name}}</td>
+                    <td>{{$form->slug}}</td>
+                    <td> <a href="/form/edit/{{$form->id}}"> Edit </a> / <a href="/form/remove/{{$form->id}}"> Remove </a> </td>
+                </tr>
+
+                <?php $id++; ?>
+            @endforeach
+        </tbody>
         <tfoot>
         <tr>
             <th>S.N</th>
