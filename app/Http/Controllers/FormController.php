@@ -38,9 +38,12 @@ class FormController extends Controller
         $form->name = $request->input('name');
         $form->slug = $request->input('slug');
         $form->formData = $request->input('formData');
-
         $form->save();
-
         return response('success', 200);
+    }
+
+    public function getFormData($id){
+        $form = Form::find($id);
+        return response()->json($form, 200);
     }
 }
