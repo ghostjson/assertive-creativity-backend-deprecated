@@ -46,3 +46,15 @@ Route::get('/login', function () {
 //api section NON PROPER WAY
 Route::post('/api/form/save', 'FormController@save');
 Route::post('/api/form/update', 'FormController@update');
+
+
+//messages
+Route::get('/messages/inbox', function () {
+    return view('messages.inbox'); 
+});
+Route::get('/messages/compose', function () {
+    return view('messages.compose'); 
+});
+Route::get('/messages/read', function () {
+    return view('messages.read'); 
+});

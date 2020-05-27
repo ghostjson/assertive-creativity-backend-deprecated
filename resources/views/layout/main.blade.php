@@ -11,7 +11,7 @@
     <title>Assertive Creativity</title>
 
     <!--Data tables-->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/ju/dt-1.10.20/r-2.2.3/datatables.min.css"/
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/ju/dt-1.10.20/r-2.2.3/datatables.min.css"/>
 
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/7d40304bdb.js" crossorigin="anonymous"></script>
@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="{{ asset('css/adminlte.min.css')}}">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ asset('css/summernote-bs4.css')}}">
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
@@ -137,7 +139,7 @@
                         <!-- Forms Menu Section -->
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link  {{ (request()->is('/form')) ? 'active' : '' }}">
-                                <i class="fa fa-wpforms" aria-hidden="true"></i>
+                                <i class="nav-icon fas fa-edit" aria-hidden="true"></i>
                                 <p>
                                     Forms
                                     <i class="fas fa-angle-left right"></i>
@@ -159,8 +161,18 @@
 
                             </ul>
                         </li>
+                        
+                        <li class="nav-item">
+                            <a href="/messages/inbox" class="nav-link {{ (request()->is('/messages')) ? 'active' : '' }}">
+                                <i class="nav-icon far fa-envelope"></i>
+                                <p>
+                                    Messages
+                                </p>
+                            </a>
+                        </li>
+                        
                         <!-- /Forms Menu Section -->
-
+                        
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
