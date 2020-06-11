@@ -23,6 +23,8 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('css/summernote-bs4.css')}}">
+
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
@@ -158,9 +160,10 @@
                                         <p>Form Creator</p>
                                     </a>
                                 </li>
-
+                                
                             </ul>
                         </li>
+                        <!-- /Forms Menu Section -->
                         
                         <li class="nav-item">
                             <a href="/messages/inbox" class="nav-link {{ (request()->is('/messages')) ? 'active' : '' }}">
@@ -170,8 +173,56 @@
                                 </p>
                             </a>
                         </li>
+
+                        <li class="nav-item">
+                            <a href="/products" class="nav-link {{ (request()->is('/products')) ? 'active' : '' }}">
+                                <i class="fas fa-cart-arrow-down"></i>
+                                <p>
+                                    Products
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/vendors" class="nav-link {{ (request()->is('/vendors')) ? 'active' : '' }}">
+                                <i class="fas fa-store-alt"></i>
+                                <p>
+                                    Vendors
+                                </p>
+                            </a>
+                        </li>
                         
-                        <!-- /Forms Menu Section -->
+
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link  {{ (request()->is('/creator')) ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-edit" aria-hidden="true"></i>
+                                <p>
+                                    Page Creator
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/creator/home" class="nav-link  {{ (request()->is('/creator/home')) ? 'active' : '' }}">
+                                        <i class="far fa-file"></i>
+                                        <p>Home</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/creator/about" class="nav-link">
+                                        <i class="far fa-file"></i>
+                                        <p>About</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/creator/home" class="nav-link">
+                                        <i class="far fa-file"></i>
+                                        <p>Contact</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
                         
                     </ul>
                 </nav>

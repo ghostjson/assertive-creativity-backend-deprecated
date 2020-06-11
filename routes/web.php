@@ -58,3 +58,32 @@ Route::get('/messages/compose', function () {
 Route::get('/messages/read', function () {
     return view('messages.read'); 
 });
+
+Route::get('/products',function(){
+    return view('pages.products');
+});
+
+Route::get('/products/new', function(){
+    return view('pages.products.create');
+});
+
+Route::get('/vendors',function(){
+    return view('pages.vendors');
+});
+
+Route::get('/vendors/new', function(){
+    return view('pages.vendors.create');
+});
+
+
+Route::get('/creator/home', function(){
+    return view('pages.page-editor.home');
+});
+
+Route::get('/creator/about', function(){
+    return view('pages.page-editor.home');
+});
+
+Route::get('/creator/contact', function(){
+    return view('pages.page-editor.home');
+});

@@ -1,0 +1,19 @@
+:root {
+    --primary-color: #cc9933;
+}
+
+.site-primary {
+    background: var(--primary-color);
+    color: white;
+    transition: all 0.8s;
+}
+
+.site-primary:hover {
+    --primary-color: #e4a322;
+    color: white;
+}
+
+.site-dark {
+    background: #343a40;
+    color: white;
+}
