@@ -15,7 +15,7 @@ class CreateFormDataTable extends Migration
     {
         Schema::create('form_data', function (Blueprint $table) {
             $table->id();
-            $table->integer('customer_id')->unsigned();
+            $table->bigInteger('customer_id')->unsigned();
             $table->timestamps();
             $table->foreign('customer_id')->references('id')->on('users');
         });
