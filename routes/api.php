@@ -25,13 +25,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::ApiResource('/products', 'ProductController');
 
 // Pages
-Route::ApiResource('/pages', 'PagesController');
+Route::ApiResource('/pages', 'PageController');
 
 // Forms
-Route::ApiResource('/forms', 'FormsController');
+Route::ApiResource('/forms', 'FormController');
 
 // Companies
-Route::ApiResource('/companies', 'CompaniesController');
+Route::ApiResource('/companies', 'CompanyController');
 
 // Conversations
 
