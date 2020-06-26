@@ -22,16 +22,16 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // Users
 
 // Products
-Route::resource('/products', 'ProductController');
+Route::ApiResource('/products', 'ProductController');
 
 // Pages
-Route::resource('/pages', 'PagesController');
+Route::ApiResource('/pages', 'PagesController');
 
 // Forms
-Route::resource('/forms', 'FormsController');
+Route::ApiResource('/forms', 'FormsController');
 
 // Companies
-Route::resource('/companies', 'CompaniesController');
+Route::ApiResource('/companies', 'CompaniesController');
 
 // Conversations
 
