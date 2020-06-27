@@ -17,7 +17,6 @@ class ProductController extends Controller
         return Product::create($request->validated());
     }
 
-
     function update(Product $product, UpdateProduct $request){
         return $product->update($request->validated());
     }

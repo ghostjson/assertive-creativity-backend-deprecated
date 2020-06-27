@@ -36,5 +36,5 @@ Route::ApiResource('/companies', 'CompanyController');
 // Conversations
 
 // Orders
-
+Route::ApiResource('/orders', 'OrderController');
 
