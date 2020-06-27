@@ -20,6 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 // Users
+Route::ApiResource('/users', 'UserController');
 
 // Products
 Route::ApiResource('/products', 'ProductController');

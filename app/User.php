@@ -2,9 +2,11 @@
 
 namespace App;
 
+use App\Http\Requests\StoreUser;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Hash;
 
 class User extends Authenticatable
 {
@@ -16,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'role'
     ];
 
     /**
@@ -36,4 +38,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function isUser(User $user){
+        if($user->role == 'user'){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public static function createUser(StoreUser $request){
+        $data = $request->validated();
+        $data['role'] = 'user';
+        $data['password'] = Hash::make($data['password']);
+        return User::create($data);
+    }
 }
