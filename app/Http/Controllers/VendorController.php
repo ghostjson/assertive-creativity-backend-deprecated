@@ -8,14 +8,15 @@ use App\Http\Resources\VendorResource;
 use App\User;
 use Exception;
 
-class VendorController extends Controller
+use Illuminate\Http\Request;class VendorController extends Controller
 {
     function index(){
         $users = User::where('role','vendor')->get();
         return VendorResource::collection($users);
     }
 
-    function show(User $user){
+    function show(int $id){
+        $user = User::find($id);
         if(User::isVendor($user)){
             return new VendorResource($user);
         }else{
@@ -23,7 +24,8 @@ class VendorController extends Controller
         }
     }
 
-    function update(User $user, UpdateVendor $request){
+    function update(int $id, UpdateVendor $request){
+        $user = User::find($id);
         $user = User::isVendor($user) ? $user : abort(404);
         $user->update($request->validated());
         return $user;
@@ -33,12 +35,13 @@ class VendorController extends Controller
         return User::createVendor($request);
     }
 
-    function delete(User $user){
+    function destroy(int $id){
+        $user = User::find($id);
         $user = User::isVendor($user) ? $user : abort(404);
         try{
             $user->delete();
         }catch (Exception $e){
-                return response()->json(['status'=>'could not Delete'], 400);
+            return response()->json(['status'=>'could not Delete'], 400);
         }
     }
 }
