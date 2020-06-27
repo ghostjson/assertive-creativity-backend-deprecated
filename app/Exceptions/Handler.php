@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Throwable;
@@ -54,6 +55,10 @@ class Handler extends ExceptionHandler
     {
         if ($exception instanceof ModelNotFoundException){
             return response()->json(['status'=> 'Not Found'], 404);
+        }
+
+        if ($exception instanceof QueryException){
+            return response()->json(['status'=> 'User may already exist, try login'], 409);
         }
 
         return parent::render($request, $exception);

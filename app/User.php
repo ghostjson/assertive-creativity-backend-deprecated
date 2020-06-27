@@ -47,10 +47,37 @@ class User extends Authenticatable
         }
     }
 
+    public static function isVendor(User $user){
+        if($user->role == 'vendor'){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public static function isAdmin(User $user){
+        if($user->role == 'admin'){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     public static function createUser(StoreUser $request){
         $data = $request->validated();
         $data['role'] = 'user';
         $data['password'] = Hash::make($data['password']);
         return User::create($data);
+    }
+
+    public static function createVendor(StoreUser $request){
+        $data = $request->validated();
+        $data['role'] = 'vendor';
+        $data['password'] = Hash::make($data['password']);
+        return User::create($data);
+    }
+
+    public static function createAdmin(){
+        //
     }
 }
