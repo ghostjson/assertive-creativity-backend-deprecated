@@ -2,48 +2,34 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreForm;
+use App\Http\Requests\UpdateForm;
+use App\Http\Resources\FormResource;
 use App\Form;
 
 class FormController extends Controller
 {
-    public function save(Request $request){
-        $form = new Form;
-        $form->name = $request->input('name');
-        $form->slug = $request->input('slug');
-        $form->formData = $request->input('formData');
-        $form->save();
-        return response('success', 200);
+    public function index(){
+        return FormResource::collection(Form::all());
     }
 
-    public function formsView(){
-        $forms = Form::latest()->get();
-        return view('form.forms', ['forms' => $forms]);
+    public function store(StoreForm $request){
+        return Form::create($request->validated());
     }
 
-    public function formEdit($id){
-        $form = Form::find($id);
-        return view('form.form-edit', ['form'=>$form]);
+    public function destroy(Form $form){
+        try {
+            return $form->delete();
+        }catch (\Exception $e){
+            return response('Failed to delete', 400);
+        }
     }
 
-    public function formRemove($id){
-        $form = Form::find($id);
-        $form->delete();
-        return redirect('/form/forms');
+    public function update(Form $form, UpdateForm $request){
+        return $form->update($request->validated());
     }
 
-    public function update(Request $request){
-        $form = Form::find($request->id);
-
-        $form->name = $request->input('name');
-        $form->slug = $request->input('slug');
-        $form->formData = $request->input('formData');
-        $form->save();
-        return response('success', 200);
-    }
-
-    public function getFormData($id){
-        $form = Form::find($id);
-        return response()->json($form, 200);
+    public function show(Form $form){
+        return new FormResource($form->all());
     }
 }
