@@ -57,10 +57,6 @@ class Handler extends ExceptionHandler
             return response()->json(['status'=> 'Not Found'], 404);
         }
 
-        if ($exception instanceof QueryException){
-            return response()->json(['status'=> 'User may already exist, try login'], 409);
-        }
-
         return parent::render($request, $exception);
     }
 }
