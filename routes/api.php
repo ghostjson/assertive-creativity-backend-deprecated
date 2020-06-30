@@ -41,3 +41,6 @@ Route::post('/message', 'ConversationController@send'); //send a message
 // Orders
 Route::ApiResource('/orders', 'OrderController');
 
+//authentication routes
+Route::get('/user/test', 'AuthController@test');
+
