@@ -9,6 +9,12 @@ use App\Page;
 
 class PageController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:api');
+        $this->middleware('auth.admin');
+    }
+
     function index()  {
         return PageResource::collection(Page::all());
     }

@@ -9,6 +9,11 @@ use App\Order;
 
 class OrderController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:api');
+    }
+
     function index()  {
         return OrderResource::collection(Order::all());
     }

@@ -9,6 +9,12 @@ use App\Form;
 
 class FormController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:api');
+        $this->middleware('auth.admin');
+    }
+
     public function index(){
         return FormResource::collection(Form::all());
     }
