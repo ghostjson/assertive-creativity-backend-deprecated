@@ -36,7 +36,8 @@ Route::ApiResource('/forms', 'FormController');
 Route::ApiResource('/companies', 'CompanyController');
 
 // Conversations
-Route::post('/message', 'ConversationController@send'); //send a message
+Route::post('/messages', 'ConversationController@send'); //send a message
+Route::get('/messages', 'ConversationController@retrieve');
 
 // Orders
 Route::ApiResource('/orders', 'OrderController');
