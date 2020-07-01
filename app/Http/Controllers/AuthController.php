@@ -9,16 +9,14 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-    public function test(){
-        $user = User::find(2);
 
-        return $user->createToken('Token Name')->accessToken;
+    public function test(){
+        return auth()->user();
     }
 
     public function login(LoginRequest $request){
         if(Auth::attempt($request->validated())){
-            $user = User::where('email', '=', $request->input('email'))->first();
-            return $user->createToken('Auth Token')->accessToken;
+            return $request->user()->createToken('Auth Token')->accessToken;
         }else{
             return response()->json(['status'=>'incorrect credentials'], 401);
         }

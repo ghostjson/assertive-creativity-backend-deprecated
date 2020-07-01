@@ -9,6 +9,12 @@ use App\Product;
 
 class ProductController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:api');
+        $this->middleware('auth.vendor');
+    }
+
     function index()  {
         return ProductResource::collection(Product::all());
     }

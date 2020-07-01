@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Company;
+use App\Http\Middleware\IsAdminMiddleware;
 use App\Http\Requests\StoreCompany;
 use App\Http\Requests\UpdateCompany;
 use App\Http\Resources\CompanyResource;
@@ -10,20 +11,29 @@ use Illuminate\Http\Request;
 
 class CompanyController extends Controller
 {
-    function index()  {
+    public function __construct()
+    {
+        $this->middleware = ['auth.admin'];
+    }
+
+    function index()
+    {
         return CompanyResource::collection(Company::all());
     }
 
-    function store(StoreCompany $request){
+    function store(StoreCompany $request)
+    {
         return Company::create($request->validated());
     }
 
 
-    function update(Company $company, UpdateCompany $request){
+    function update(Company $company, UpdateCompany $request)
+    {
         return $company->update($request->validated());
     }
 
-    function show(Company $company){
+    function show(Company $company)
+    {
         return new CompanyResource($company);
     }
 
