@@ -45,4 +45,5 @@ Route::ApiResource('/orders', 'OrderController');
 //authentication routes
 Route::get('/user/test', 'AuthController@test');
 Route::post('/login', 'AuthController@login');
+Route::post('/signup', 'AuthController@signup');
 
