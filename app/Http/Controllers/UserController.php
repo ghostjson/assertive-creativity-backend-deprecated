@@ -34,13 +34,13 @@ class UserController extends Controller
         return User::createUser($request);
     }
 
-    function delete(User $user){
+    function destroy(User $user){
         $user = User::isUser($user) ? $user : abort(404);
         try{
             $user->delete();
         }catch (Exception $e){
             return response()->json(['status'=>'could not Delete'], 400);
-        }
+        }git
     }
 
 }
