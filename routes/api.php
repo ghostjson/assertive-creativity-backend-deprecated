@@ -46,4 +46,4 @@ Route::ApiResource('/orders', 'OrderController');
 Route::get('/user/test', 'AuthController@test');
 Route::post('/login', 'AuthController@login');
 Route::post('/signup', 'AuthController@signup');
-
+Route::get('/user', 'AuthController@getUser')->middleware('auth:api');

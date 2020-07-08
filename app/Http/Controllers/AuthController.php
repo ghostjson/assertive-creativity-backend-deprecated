@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\SignupRequest;
 use App\Http\Requests\StoreUser;
+use App\Http\Resources\UserResource;
 use App\User;
 use Egulias\EmailValidator\Exception\ExpectingCTEXT;
 use Illuminate\Http\Request;
@@ -32,6 +33,14 @@ class AuthController extends Controller
             return response()->json(['status' => $e], 409);
         }
         return $this->getTokenResponse($user);
+    }
+
+    public function getRole(){
+        return response()->json(['role' => \auth()->user()->role]);
+    }
+
+    public function getUser(): UserResource {
+        return new UserResource(auth()->user());
     }
 
     private function getTokenResponse(User $user){
