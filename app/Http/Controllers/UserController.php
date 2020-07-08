@@ -40,7 +40,7 @@ class UserController extends Controller
             $user->delete();
         }catch (Exception $e){
             return response()->json(['status'=>'could not Delete'], 400);
-        }git
+        }
     }
 
 }
