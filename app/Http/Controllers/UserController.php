@@ -31,7 +31,11 @@ class UserController extends Controller
     }
 
     function store(StoreUser $request){
-        return User::createUser($request);
+        try{
+            return User::createUser($request);
+        }catch (Exception $e){
+            return response()->json(['status' => $e], 409);
+        }
     }
 
     function destroy(User $user){

@@ -66,8 +66,8 @@ class User extends Authenticatable
 
     public static function createUser(StoreUser $request){
 
-        if(User::where('email', $request->input('email'))->exist()){
-//            throw new \Exception('User already exist');
+        if(User::where('email', $request->input('email'))->exists()){
+           throw new \Exception('User already exist');
         }
 
         $data = $request->validated();
