@@ -6,6 +6,7 @@ use App\Http\Requests\LoginRequest;
 use App\Http\Requests\SignupRequest;
 use App\Http\Requests\StoreUser;
 use App\User;
+use Egulias\EmailValidator\Exception\ExpectingCTEXT;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,7 +26,11 @@ class AuthController extends Controller
     }
 
     public function signup(StoreUser $request){
-        $user = User::createUser($request);
+        try{
+            $user = User::createUser($request);
+        }catch (\Exception $e){
+            return response()->json(['status' => $e], 409);
+        }
         return $this->getTokenResponse($user);
     }
 
