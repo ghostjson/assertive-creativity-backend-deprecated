@@ -2,8 +2,6 @@
 
 namespace App;
 
-use App\Http\Resources\MessageResource;
-use http\Message;
 use Illuminate\Database\Eloquent\Model;
 
 class Conversation extends Model
@@ -16,5 +14,7 @@ class Conversation extends Model
         return Conversation::where('receiver', '=', $user_id)
             ->orWhere('sender' ,'=', $user_id)
             ->latest()->get();
+
     }
+
 }
