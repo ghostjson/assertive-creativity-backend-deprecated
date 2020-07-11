@@ -12,7 +12,7 @@ class ProductController extends Controller
     public function __construct()
     {
         $this->middleware('auth:api');
-        $this->middleware('auth.vendor');
+//        $this->middleware('auth.vendor');
     }
 
     function index()  {
