@@ -27,6 +27,10 @@ class StoreProduct extends FormRequest
         return [
             'name' => 'required',
             'price' => 'required',
+            'stock' => 'nullable',
+            'features' => 'nullable',
+            'image' => 'nullable',
+            'description' => 'nullable'
         ];
     }
 }
