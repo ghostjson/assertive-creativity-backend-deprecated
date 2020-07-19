@@ -25,6 +25,7 @@ Route::ApiResource('/vendors', 'VendorController');
 
 // Products
 Route::ApiResource('/products', 'ProductController');
+Route::post('/products/file/upload', 'ProductController@storeFile');
 
 // Pages
 Route::ApiResource('/pages', 'PageController');

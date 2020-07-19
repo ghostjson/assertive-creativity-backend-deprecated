@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\FileUploadRequest;
 use App\Http\Requests\StoreProduct;
 use App\Http\Requests\UpdateProduct;
 use App\Http\Resources\ProductResource;
 use App\Product;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+
 
 class ProductController extends Controller
 {
@@ -40,5 +44,15 @@ class ProductController extends Controller
         catch (\Exception $e){
             return response()->json(['status'=>'could not Delete'], 400);
         }
+    }
+
+    function storeFile(FileUploadRequest $request){
+        $file_path = $request->file('file')->store('product_files', 's3');
+        return Storage::url($file_path);
+    }
+
+    function moveFile(){
+        Storage::move('test/MisfaST4ameLawvEklXiCcpspShmAz5Jtpe7F6TJ.webp', 'move/MisfaST4ameLawvEklXiCcpspShmAz5Jtpe7F6TJ.webp');
+        return response('success', 200);
     }
 }
