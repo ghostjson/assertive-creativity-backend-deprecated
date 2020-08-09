@@ -2,11 +2,101 @@
     "variables": [],
     "info": {
         "name": "Laravel API",
-        "_postman_id": "1ca61c42-aecb-4076-8155-0a0cb685398e",
+        "_postman_id": "d298d8ba-6be2-4171-84f6-27a9e305345d",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
     "item": [
+        {
+            "name": "Authentication",
+            "description": "Authentication of user <br>\nJWT authentication is used",
+            "item": [
+                {
+                    "name": "Get current user",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "api\/user",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Login\nuser login",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "api\/login",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"email\": \"laboriosam\",\n    \"password\": \"consectetur\"\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Registration\nuser registration",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "api\/signup",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"email\": \"dignissimos\",\n    \"password\": \"sunt\",\n    \"name\": \"magnam\",\n    \"phone\": \"aliquid\"\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
         {
             "name": "Product",
             "description": "",
@@ -61,7 +151,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"name\": \"et\",\n    \"price\": 5,\n    \"features\": \"necessitatibus\",\n    \"description\": \"dolore\",\n    \"stock\": 6,\n    \"image\": \"nihil\"\n}"
+                            "raw": "{\n    \"name\": \"cumque\",\n    \"price\": 17,\n    \"features\": \"illo\",\n    \"description\": \"accusamus\",\n    \"stock\": 14,\n    \"image\": \"ducimus\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -79,7 +169,7 @@
                                 {
                                     "id": "product",
                                     "key": "product",
-                                    "value": "consequuntur",
+                                    "value": "voluptatum",
                                     "description": "id of the product"
                                 }
                             ]
@@ -115,7 +205,7 @@
                                 {
                                     "id": "product",
                                     "key": "product",
-                                    "value": "iure",
+                                    "value": "cupiditate",
                                     "description": "id of the product"
                                 }
                             ]
@@ -133,7 +223,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"name\": \"magni\",\n    \"price\": 18,\n    \"features\": \"blanditiis\",\n    \"description\": \"dolore\",\n    \"stock\": 16,\n    \"image\": \"rerum\"\n}"
+                            "raw": "{\n    \"name\": \"ab\",\n    \"price\": 5,\n    \"features\": \"dolores\",\n    \"description\": \"quidem\",\n    \"stock\": 13,\n    \"image\": \"labore\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -151,7 +241,7 @@
                                 {
                                     "id": "product",
                                     "key": "product",
-                                    "value": "dignissimos",
+                                    "value": "id",
                                     "description": "int id of the product"
                                 }
                             ]
@@ -197,7 +287,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"file\": \"atque\"\n}"
+                            "raw": "{\n    \"file\": \"quo\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -630,34 +720,6 @@
                     }
                 },
                 {
-                    "name": "api\/user",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "localhost",
-                            "path": "api\/user",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
                     "name": "api\/users",
                     "request": {
                         "url": {
@@ -1535,90 +1597,6 @@
                             "query": []
                         },
                         "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "api\/user\/test",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "localhost",
-                            "path": "api\/user\/test",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "api\/login",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "localhost",
-                            "path": "api\/login",
-                            "query": []
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "api\/signup",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "localhost",
-                            "path": "api\/signup",
-                            "query": []
-                        },
-                        "method": "POST",
                         "header": [
                             {
                                 "key": "Content-Type",

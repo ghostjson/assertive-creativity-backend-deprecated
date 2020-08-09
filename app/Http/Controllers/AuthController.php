@@ -8,17 +8,30 @@ use App\Http\Requests\StoreUser;
 use App\Http\Resources\UserResource;
 use App\User;
 use Egulias\EmailValidator\Exception\ExpectingCTEXT;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+/**
+ * @group Authentication
+ * Authentication of user <br>
+ * JWT authentication is used
+*/
 class AuthController extends Controller
 {
 
-    public function test(){
-        return auth()->user();
-    }
-
-    public function login(LoginRequest $request){
+    /**
+     * Login
+     * user login
+     * @bodyParam email string required email of the user
+     * @bodyParam password string required password of the user
+     * @response {
+        "token": "user_token"
+     * }
+     * @param LoginRequest $request
+     * @return JsonResponse
+     */
+    public function login(LoginRequest $request) : JsonResponse {
         if(Auth::attempt($request->validated())){
             return $this->getTokenResponse($request->user());
         }else{
@@ -26,7 +39,20 @@ class AuthController extends Controller
         }
     }
 
-    public function signup(StoreUser $request){
+    /**
+     * Registration
+     * user registration
+     * @bodyParam email string required email of the user
+     * @bodyParam password string required password of the user ( min : 8 )
+     * @bodyParam name string required name of the user
+     * @bodyParam phone string phone number of the user
+     * @response {
+            "token": "user_token"
+     * }
+     * @param StoreUser $request
+     * @return JsonResponse
+     */
+    public function signup(StoreUser $request) : JsonResponse {
         try{
             $user = User::createUser($request);
         }catch (\Exception $e){
@@ -35,10 +61,17 @@ class AuthController extends Controller
         return $this->getTokenResponse($user);
     }
 
+
     public function getRole(){
         return response()->json(['role' => \auth()->user()->role]);
     }
 
+    /**
+     * Get current user
+     * @authenticated
+     * @apiResource App\Http\Resources\UserResource
+     * @apiResourceModel App\User
+     */
     public function getUser(): UserResource {
         return new UserResource(auth()->user());
     }

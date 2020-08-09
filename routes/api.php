@@ -44,7 +44,6 @@ Route::get('/messages', 'ConversationController@retrieve');
 Route::ApiResource('/orders', 'OrderController');
 
 //authentication routes
-Route::get('/user/test', 'AuthController@test');
 Route::post('/login', 'AuthController@login');
 Route::post('/signup', 'AuthController@signup');
 Route::get('/user', 'AuthController@getUser')->middleware('auth:api');
