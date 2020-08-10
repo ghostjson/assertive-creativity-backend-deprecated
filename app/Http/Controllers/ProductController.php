@@ -22,7 +22,7 @@ class ProductController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:api');
+        $this->middleware('auth:api')->except(['index', 'show']);
     }
 
     /**
@@ -43,6 +43,8 @@ class ProductController extends Controller
      * @bodyParam description string description of the product
      * @bodyParam stock int stock of the product
      * @bodyParam image url image url of the product
+     *
+     * @authenticated
      * @param StoreProduct $request
      * @return bool
      */
@@ -60,6 +62,7 @@ class ProductController extends Controller
      * @bodyParam stock int stock of the product
      * @bodyParam image url image url of the product
      *
+     * @authenticated
      * @param Product $product
      * @param UpdateProduct $request
      * @return bool
@@ -91,6 +94,8 @@ class ProductController extends Controller
      * @response 400{
         "status" : "could not delete"
      * }
+     *
+     * @authenticated
      * @param Product $product
      * @return JsonResponse
      */
@@ -108,6 +113,8 @@ class ProductController extends Controller
      * Store a file on aws
      * returns a url of the uploaded file
      * @bodyParam file file required file to be uploaded to aws
+     *
+     * @authenticated
      * @param FileUploadRequest $request
      * @return string
      */
