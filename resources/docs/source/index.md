@@ -62,9 +62,9 @@ fetch(url, {
 {
     "data": {
         "id": null,
-        "name": "Alfreda Haag",
-        "email": "gutkowski.eldon@example.org",
-        "email_verified_at": "2020-08-09T14:14:26.000000Z",
+        "name": "Marvin Bruen",
+        "email": "ashields@example.net",
+        "email_verified_at": "2020-08-10T06:35:43.000000Z",
         "role": null
     }
 }
@@ -87,7 +87,7 @@ curl -X POST \
     "http://localhost/api/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"email":"laboriosam","password":"consectetur"}'
+    -d '{"email":"aspernatur","password":"dolor"}'
 
 ```
 
@@ -102,8 +102,8 @@ let headers = {
 };
 
 let body = {
-    "email": "laboriosam",
-    "password": "consectetur"
+    "email": "aspernatur",
+    "password": "dolor"
 }
 
 fetch(url, {
@@ -146,7 +146,7 @@ curl -X POST \
     "http://localhost/api/signup" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"email":"dignissimos","password":"sunt","name":"magnam","phone":"aliquid"}'
+    -d '{"email":"explicabo","password":"distinctio","name":"vel","phone":"sunt"}'
 
 ```
 
@@ -161,10 +161,10 @@ let headers = {
 };
 
 let body = {
-    "email": "dignissimos",
-    "password": "sunt",
-    "name": "magnam",
-    "phone": "aliquid"
+    "email": "explicabo",
+    "password": "distinctio",
+    "name": "vel",
+    "phone": "sunt"
 }
 
 fetch(url, {
@@ -283,7 +283,7 @@ curl -X POST \
     "http://localhost/api/products" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"cumque","price":17,"features":"illo","description":"accusamus","stock":14,"image":"ducimus"}'
+    -d '{"name":"voluptas","price":2,"features":"aliquid","description":"mollitia","stock":8,"image":"et"}'
 
 ```
 
@@ -298,12 +298,12 @@ let headers = {
 };
 
 let body = {
-    "name": "cumque",
-    "price": 17,
-    "features": "illo",
-    "description": "accusamus",
-    "stock": 14,
-    "image": "ducimus"
+    "name": "voluptas",
+    "price": 2,
+    "features": "aliquid",
+    "description": "mollitia",
+    "stock": 8,
+    "image": "et"
 }
 
 fetch(url, {
@@ -340,14 +340,14 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/products/voluptatum" \
+    -G "http://localhost/api/products/sunt" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/products/voluptatum"
+    "http://localhost/api/products/sunt"
 );
 
 let headers = {
@@ -402,16 +402,16 @@ Parameter | Status | Description
 
 ```bash
 curl -X PUT \
-    "http://localhost/api/products/cupiditate" \
+    "http://localhost/api/products/blanditiis" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"ab","price":5,"features":"dolores","description":"quidem","stock":13,"image":"labore"}'
+    -d '{"name":"aliquid","price":14,"features":"odit","description":"eum","stock":11,"image":"consectetur"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/products/cupiditate"
+    "http://localhost/api/products/blanditiis"
 );
 
 let headers = {
@@ -420,12 +420,12 @@ let headers = {
 };
 
 let body = {
-    "name": "ab",
-    "price": 5,
-    "features": "dolores",
-    "description": "quidem",
-    "stock": 13,
-    "image": "labore"
+    "name": "aliquid",
+    "price": 14,
+    "features": "odit",
+    "description": "eum",
+    "stock": 11,
+    "image": "consectetur"
 }
 
 fetch(url, {
@@ -469,14 +469,14 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X DELETE \
-    "http://localhost/api/products/id" \
+    "http://localhost/api/products/qui" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/products/id"
+    "http://localhost/api/products/qui"
 );
 
 let headers = {
@@ -531,7 +531,7 @@ curl -X POST \
     "http://localhost/api/products/file/upload" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"file":"quo"}'
+    -d '{"file":"reiciendis"}'
 
 ```
 
@@ -546,7 +546,7 @@ let headers = {
 };
 
 let body = {
-    "file": "quo"
+    "file": "reiciendis"
 }
 
 fetch(url, {

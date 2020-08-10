@@ -2,7 +2,7 @@
     "variables": [],
     "info": {
         "name": "Laravel API",
-        "_postman_id": "d298d8ba-6be2-4171-84f6-27a9e305345d",
+        "_postman_id": "b64f5db4-4be1-45d3-be02-843ce009c261",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -61,7 +61,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"email\": \"laboriosam\",\n    \"password\": \"consectetur\"\n}"
+                            "raw": "{\n    \"email\": \"aspernatur\",\n    \"password\": \"dolor\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -89,7 +89,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"email\": \"dignissimos\",\n    \"password\": \"sunt\",\n    \"name\": \"magnam\",\n    \"phone\": \"aliquid\"\n}"
+                            "raw": "{\n    \"email\": \"explicabo\",\n    \"password\": \"distinctio\",\n    \"name\": \"vel\",\n    \"phone\": \"sunt\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -151,7 +151,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"name\": \"cumque\",\n    \"price\": 17,\n    \"features\": \"illo\",\n    \"description\": \"accusamus\",\n    \"stock\": 14,\n    \"image\": \"ducimus\"\n}"
+                            "raw": "{\n    \"name\": \"voluptas\",\n    \"price\": 2,\n    \"features\": \"aliquid\",\n    \"description\": \"mollitia\",\n    \"stock\": 8,\n    \"image\": \"et\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -169,7 +169,7 @@
                                 {
                                     "id": "product",
                                     "key": "product",
-                                    "value": "voluptatum",
+                                    "value": "sunt",
                                     "description": "id of the product"
                                 }
                             ]
@@ -205,7 +205,7 @@
                                 {
                                     "id": "product",
                                     "key": "product",
-                                    "value": "cupiditate",
+                                    "value": "blanditiis",
                                     "description": "id of the product"
                                 }
                             ]
@@ -223,7 +223,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"name\": \"ab\",\n    \"price\": 5,\n    \"features\": \"dolores\",\n    \"description\": \"quidem\",\n    \"stock\": 13,\n    \"image\": \"labore\"\n}"
+                            "raw": "{\n    \"name\": \"aliquid\",\n    \"price\": 14,\n    \"features\": \"odit\",\n    \"description\": \"eum\",\n    \"stock\": 11,\n    \"image\": \"consectetur\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -241,7 +241,7 @@
                                 {
                                     "id": "product",
                                     "key": "product",
-                                    "value": "id",
+                                    "value": "qui",
                                     "description": "int id of the product"
                                 }
                             ]
@@ -287,7 +287,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"file\": \"quo\"\n}"
+                            "raw": "{\n    \"file\": \"reiciendis\"\n}"
                         },
                         "description": "",
                         "response": []
